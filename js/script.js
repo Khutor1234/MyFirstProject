@@ -5,17 +5,28 @@ let personalMovieDB = {
     actors : {},
     genres : [],
     privat : false,
+};
+let num = 2;
+
+if( numberOfFilms <= 10 ){
+    alert("Маловато");
+}else if( numberOfFilms > 10 && numberOfFilms <= 30){
+    alert("Вы класический зритель");
+}else if( numberOfFilms > 30 ){
+    alert("Вы настоящий киноман");
+}else{
+    alert("Error");
 }
 
-let a = prompt("Какой фильм вы смотрели последним?", ""),
-    b = prompt("Как вы его оцените?", ""),
-    c = prompt("Какой фильм вы смотрели последним?", ""),
-    d = prompt("Как вы его оцените?", "");
+for( let i = 0; i < num; i++){
+    let a = prompt("Какой фильм вы смотрели последним?", ""),
+        b = +prompt("Как вы его оцените?", "");
+    
+        if( a.length < 1 || a.length > 50 ){
+            i--;
+        } else{
+            personalMovieDB.movies[a] = b;
+        }
+}
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-
-console.log(numberOfFilms);
 console.log(personalMovieDB);
-console.log(personalMovieDB.movies);
-console.log(personalMovieDB.count);
